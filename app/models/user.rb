@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :votes, foreign_key: :voter_id
 
   validate :validate_password
+  validates :username, uniqueness: {message: 'is already registered'}
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/
+
 
   def password
     @password ||= BCrypt::Password.new(hashed_password)
