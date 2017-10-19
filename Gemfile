@@ -12,6 +12,7 @@ gem 'activerecord', '~>5.1.0'
 
 gem 'rake'
 gem 'bcrypt'
+gem 'paperclip'
 
 gem 'shotgun', '~>0.9.1'
 
