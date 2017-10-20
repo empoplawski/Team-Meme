@@ -18,17 +18,17 @@
   <title>Meme Overflow</title>
 </head>
 <body>
-    <% if logged_in? %>
   <nav>
-    <h1 class="site-title">Meme Overflow</h1>
-    <p class="username"><%= current_user.username %></p>
+    <h1 class="site-title">meme <strong>overflow</strong></h1>
+    <% if logged_in? %>
+    <p class="session_display"><%= current_user.username %></p>
       <form class="logout-form" method="POST" action="/sessions">
         <input type="hidden" name="_method" value="DELETE">
         <input id ="logout" type="submit" class="button" value="logout">
       </form>
     <% else %>
-      <a href="/users/new">sign up</a>
-      <a href="/sessions/new">login</a>
+      <a class="session_display" href="/users/new">sign up</a>
+      <a class="session_display" href="/sessions/new">login</a>
     <% end %>
   </nav>
 

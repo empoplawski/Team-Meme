@@ -10,6 +10,8 @@ body {
 .site-title {
   display: inline;
   padding-right: 20px;
+  font-family: 'Dekko';
+  font-weight: normal;
 }
 
 .header2 {
@@ -38,8 +40,15 @@ body {
   display: inline;
 }
 
-.username {
+.session_display {
   display: inline;
+  color: inherit;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 nav {
