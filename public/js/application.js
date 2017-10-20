@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $(".signup").click(function(e) {
     e.preventDefault();
     var $link = $(this);
@@ -66,5 +67,6 @@ $(document).ready(function() {
   })
 
 
+>>>>>>> master
 
 });

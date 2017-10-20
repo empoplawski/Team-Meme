@@ -1,13 +1,27 @@
 <!-- <img src="pulpitrock.jpg" alt="Mountain View" width="500" height="377">
  -->
 
+
 <div id="container">
 
  <center><image src="/<%= @meme.photo %>" width="500" height="500" >
+
+
+
+       <form method="post" action='/memes/<%= @meme.id %>/upvote'  >
+          <button type="submit" name="submit_param" value="submit_value" ></button>  <button type="submit" name="submit_param" value="submit_value" ></button>
+        </form>
+
+
+  <div class="vote_count"><%= @meme.votes.count%> </div>
   <ul>
     <% @meme.comments.each do |comment| %>
       <li><%= comment.comment_content %></li>
     <% end %>
+      <form id="create_meme_comment" method="post" action="/memes/<%= @meme.id %>/comment">
+        <input id="comment_text" type="text" name="comment_content" placeholder="add meme comment">
+        <input type="submit" value="submit">
+      </form>
   </ul>
 
  <div class="captions-display">
@@ -18,9 +32,18 @@
           <% caption.comments.each do |comment| %>
             <li><%= comment.comment_content %></li>
           <% end %>
+          <form id="create_caption_comment" method="post" action="/memes/<%= @meme.id %>/caption/<%= caption.id %>">
+            <input id="comment_text" type="text" name="comment_content" placeholder="add caption comment">
+            <input type="submit" value="submit">
+          </form>
         </ul>
       <% end %>
   </ul>
+
+  <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/caption">
+    <input id="caption_text" type="text" name="caption_content" placeholder="add meme caption">
+    <input type="submit" value="submit">
+  </form>
 
     </center>
  </div>
