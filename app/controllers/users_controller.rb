@@ -12,14 +12,18 @@ post '/users' do
   if @user.save
     session[:user_id] = @user.id
     if request.xhr?
-      "random"
+      erb :'sessions/_login_form', layout: false
     else
-      redirect '/'
+      @errors = @user.errors.full_messages
+      redirect '/users/new'
     end
   else
     status 422
     @errors = @user.errors.full_messages
-    erb :'/users/new'
+
+    if request.xhr?
+      @errors.to_json
+    end
   end
 end
 
