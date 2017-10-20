@@ -1,3 +1,61 @@
 body {
   margin-left: 1cm;
+  margin-top: 1cm;
+}
+
+.container {
+  padding-top: 35px;
+}
+
+.site-title {
+  display: inline;
+  padding-right: 20px;
+  font-family: 'Dekko';
+  font-weight: normal;
+}
+
+.header2 {
+  margin-top: 50px;
+}
+
+.meme-list {
+  list-style-type: none;
+  padding: 5px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#logout {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline;
+}
+
+.logout-form {
+  display: inline;
+}
+
+.session_display {
+  display: inline;
+  color: inherit;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+nav {
+  height: 35px;
+  width: 100%;
+  text-align: right;
+  position: fixed;
+  right: 30px;
+  background-color: white;
 }
