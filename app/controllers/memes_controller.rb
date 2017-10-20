@@ -4,5 +4,5 @@ end
 
 get '/memes/:id' do
   @meme = Meme.find(params[:id])
-  erb :"memes/#{meme.id}/show"
+  erb :"memes/show"
 end
