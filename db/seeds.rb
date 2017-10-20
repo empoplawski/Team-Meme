@@ -16,7 +16,7 @@ end
 
 
 10.times do
-  Vote.create(value: 1, voter_id: rand(1..5), votable: Caption.find(rand(1..10)))
+  Vote.create(value: 1, voter_id: rand(1..5), voteable: Caption.find(rand(1..10)))
 
 end
 
