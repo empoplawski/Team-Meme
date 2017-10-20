@@ -15,20 +15,26 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Meme Overflow</title>
 </head>
 <body>
-  <% if logged_in? %>
-    <p>HI <%= current_user.username %> !</p>
-    <form method="POST" action="/sessions">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" class="button" value="logout">
-    </form>
-  <% else %>
-    <a href="/users/new">sign up</a>
-    <a href="/sessions/new">login</a>
-  <% end %>
+    <% if logged_in? %>
+  <nav>
+    <h1 class="site-title">Meme Overflow</h1>
+    <p class="username"><%= current_user.username %></p>
+      <form class="logout-form" method="POST" action="/sessions">
+        <input type="hidden" name="_method" value="DELETE">
+        <input id ="logout" type="submit" class="button" value="logout">
+      </form>
+    <% else %>
+      <a href="/users/new">sign up</a>
+      <a href="/sessions/new">login</a>
+    <% end %>
+  </nav>
 
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
+
 </body>
 </html>

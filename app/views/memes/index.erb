@@ -1,10 +1,8 @@
-<h1 class="title">Welcome to Meme Overflow!</h1>
-
-<h2 class="title">Take a look at our best memes!</h2>
-
 <% @memes.each do |meme| %>
   <ul class="meme-list">
-    <li><%= meme.photo %></li>
+    <center><li><img src="/<%= meme.photo %>"</li></center>
   </ul>
 <% end %>
+
+
 
