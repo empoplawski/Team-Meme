@@ -7,12 +7,26 @@ get '/users/new' do
 
 end
 
-post '/users/new' do
+post '/users' do
   @user = User.new(params[:user])
   if @user.save
-    redirect '/'
+    session[:user_id] = @user.id
+    if request.xhr?
+      "random"
+    else
+      redirect '/'
+    end
   else
+    status 422
     @errors = @user.errors.full_messages
     erb :'/users/new'
   end
 end
+
+# get '/blah' do
+#   session[:user_id] = nil
+# end
+
+# First chunk:
+# New sesssion
+# When getting to login, AJAXify(no redirects, bitch!)
