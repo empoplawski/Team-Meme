@@ -58,5 +58,8 @@ nav {
   text-align: right;
   position: fixed;
   right: 30px;
-  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  top: 0;
+  background-color: #F0FFFF;
 }
