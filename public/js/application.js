@@ -10,6 +10,7 @@ $(document).ready(function() {
     promise.done(function(response) {
 
       $("nav").append(response);
+      $link.hide();
     });
 
   });
