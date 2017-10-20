@@ -14,6 +14,7 @@ end
   Comment.create(comment_content: Faker::TheFreshPrinceOfBelAir.quote, commenter_id: rand(1..5), commentable: Caption.find(rand(1..10)))
 end
 
+
 10.times do
   Vote.create(value: 1, voter_id: rand(1..5), votable: Caption.find(rand(1..10)))
 
@@ -47,3 +48,6 @@ Meme.create(photo: "images/tired.jpg", memer_id: rand(1..5))
 Meme.create(photo: "images/xx.jpg", memer_id: rand(1..5))
 Meme.create(photo: "images/yaomeme.png", memer_id: rand(1..5))
 
+10.times do
+  Comment.create(comment_content: Faker::HarryPotter.quote, commenter_id: rand(1..5), commentable: Meme.find(rand(1..10)))
+end

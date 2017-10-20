@@ -1,0 +1,29 @@
+<!-- <img src="pulpitrock.jpg" alt="Mountain View" width="500" height="377">
+ -->
+
+<div id="container">
+
+ <center><image src="/<%= @meme.photo %>" width="500" height="500" >
+  <ul>
+    <% @meme.comments.each do |comment| %>
+      <li><%= comment.comment_content %></li>
+    <% end %>
+  </ul>
+
+ <div class="captions-display">
+  <ul>
+    <% @meme.captions.each do |caption| %>
+      <h2><li><%= caption.caption_content %></li></h2>
+        <ul>
+          <% caption.comments.each do |comment| %>
+            <li><%= comment.comment_content %></li>
+          <% end %>
+        </ul>
+      <% end %>
+  </ul>
+
+    </center>
+ </div>
+
+
+</div>
