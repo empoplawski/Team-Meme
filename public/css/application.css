@@ -8,6 +8,7 @@ body {
 }
 
 .site-title {
+  color: inherit;
   display: inline;
   padding-right: 20px;
   font-family: 'Dekko';

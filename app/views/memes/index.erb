@@ -1,6 +1,6 @@
 <% @memes.each do |meme| %>
   <ul class="meme-list">
-    <center><li><img src="/<%= meme.photo %>"</li></center>
+    <center><li><a href="/memes/<%= meme.id %>"><img src="/<%= meme.photo %>"></a></li></center>
   </ul>
 <% end %>
 
