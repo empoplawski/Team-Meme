@@ -1,0 +1,6 @@
+<p class="session_display current_user"><%= current_user.username %></p>
+
+<form class="logout-form" method="POST" action="/sessions">
+  <input type="hidden" name="_method" value="DELETE">
+  <input id ="logout" type="submit" class="button" value="logout">
+</form>

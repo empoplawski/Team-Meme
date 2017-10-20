@@ -12,7 +12,7 @@ post '/users' do
   if @user.save
     session[:user_id] = @user.id
     if request.xhr?
-      erb :'sessions/_login_form', layout: false
+      erb :'sessions/_logged_in_links', layout: false
     else
       @errors = @user.errors.full_messages
       redirect '/users/new'

@@ -24,12 +24,33 @@ $(document).ready(function() {
       data: $form.serialize()
     });
 
+
+
+
     promise.done(function(response) {
-      // $(".signup").remove();
-      // $(".login").remove();
+      $(".signup").remove();
+      $(".login").replaceWith(response);
       $form.remove();
-      $('nav').append(response)
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     promise.fail(function(response) {
       var errors = JSON.parse(response.responseText);
