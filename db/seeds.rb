@@ -20,20 +20,6 @@ end
 
 end
 
-# Meme.create(photo: File.new("/images/99bugs.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/callbacks.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/cat.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/debugging.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/fibonacci.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/gosling.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/javascript.jpeg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/meme1.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/queries.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/semicolon.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/tired.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/xx.jpg"), memer_id: rand(1..5))
-# Meme.create(photo: File.new("/images/yaomeme.png"), memer_id: rand(1..5))
-
 Meme.create(photo: "images/99bugs.jpg", memer_id: rand(1..5))
 Meme.create(photo: "images/callbacks.jpg", memer_id: rand(1..5))
 Meme.create(photo: "images/cat.jpg", memer_id: rand(1..5))
