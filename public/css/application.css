@@ -1,3 +1,17 @@
 body {
   margin-left: 1cm;
+  margin-top: 1cm;
+}
+
+.title {
+
+}
+
+.meme-list {
+  list-style-type: none;
+  border: 1px solid silver;
+  padding: 5px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }

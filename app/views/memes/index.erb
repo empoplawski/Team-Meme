@@ -1,3 +1,10 @@
 <h1 class="title">Welcome to Meme Overflow!</h1>
 
-<h2>THIS IS TEST TEXT</h2>
+<h2 class="title">Take a look at our best memes!</h2>
+
+<% @memes.each do |meme| %>
+  <ul class="meme-list">
+    <li><%= meme.photo %></li>
+  </ul>
+<% end %>
+
