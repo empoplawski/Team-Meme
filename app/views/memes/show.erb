@@ -9,11 +9,16 @@
 
 
        <form method="post" action='/memes/<%= @meme.id %>/upvote'  >
-          <button type="submit" name="submit_param" value="submit_value" ></button>  <button type="submit" name="submit_param" value="submit_value" ></button>
+          <button type="submit" name="submit_param" value="submit_value" ></button>
+        </form>
+
+  <div class="vote_count"><%= @meme.total_votes %> </div>
+
+        <form method="post" action='/memes/<%= @meme.id %>/downvote'  >
+          <button type="submit" name="submit_param" value="submit_value" ></button>
         </form>
 
 
-  <div class="vote_count"><%= @meme.votes.count%> </div>
   <ul>
     <% @meme.comments.each do |comment| %>
       <li><%= comment.comment_content %></li>
@@ -28,6 +33,22 @@
   <ul>
     <% @meme.captions.each do |caption| %>
       <h2><li><%= caption.caption_content %></li></h2>
+
+
+
+        <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote'>
+          <button type="submit" name="submit_param" value="submit_value" ></button>
+        </form>
+
+  <div class="vote_count"><%= caption.total_votes %> </div>
+
+        <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/downvote'>
+          <button type="submit" name="submit_param" value="submit_value" ></button>
+        </form>
+
+
+
+
         <ul>
           <% caption.comments.each do |comment| %>
             <li><%= comment.comment_content %></li>
@@ -40,7 +61,7 @@
       <% end %>
   </ul>
 
-  <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/caption">
+  <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/captions">
     <input id="caption_text" type="text" name="caption_content" placeholder="add meme caption">
     <input type="submit" value="submit">
   </form>

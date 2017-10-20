@@ -7,4 +7,12 @@ class Meme < ApplicationRecord
   validates :photo, presence: true
   validates :memer_id, presence: true
 
+  def total_votes
+    vote_total = 0
+    self.votes.each do |vote|
+      vote_total += vote.value
+    end
+  vote_total
+  end
+
 end
