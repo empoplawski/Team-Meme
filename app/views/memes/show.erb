@@ -7,15 +7,18 @@
  <center><image src="/<%= @meme.photo %>" width="50%" >
 
     <% if logged_in? %>
-       <form method="post" action='/memes/<%= @meme.id %>/upvote'  >
+       <form method="post" action='/memes/<%= @meme.id %>/upvote'  class="vote-form-upvote-meme">
           <button type="submit" name="submit_param" value="submit_value" ></button>
         </form>
     <% end %>
+
   <div class="vote_count"><%= @meme.total_votes %> </div>
 
-        <form method="post" action='/memes/<%= @meme.id %>/downvote'  >
-          <button type="submit" name="submit_param" value="submit_value" ></button>
-        </form>
+    <% if logged_in? %>
+      <form method="post" action='/memes/<%= @meme.id %>/downvote' class="vote-form-downvote-meme" >
+        <button type="submit" name="submit_param" value="submit_value" ></button>
+      </form>
+    <% end %>
 
   <div class="meme-comments-display">
     <%= erb :'memes/_meme_comments', locals: { meme: @meme } %>
