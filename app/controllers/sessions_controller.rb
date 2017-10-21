@@ -9,7 +9,7 @@ post '/sessions' do
     redirect '/'
   else
     @errors = "Please enter a correct email and password or <a href='/users/new'>register here.</a>"
-    erb :'/sessions/new'
+    erb :'sessions/new'
   end
 end
 
