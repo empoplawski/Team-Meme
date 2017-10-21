@@ -9,7 +9,6 @@ $(document).ready(function() {
     });
 
     promise.done(function(response) {
-
       $("nav").append(response);
       $link.hide();
     });
@@ -35,25 +34,6 @@ $(document).ready(function() {
       $form.remove();
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     promise.fail(function(response) {
       var errors = JSON.parse(response.responseText);
 
@@ -63,9 +43,50 @@ $(document).ready(function() {
 
     })
 
+  })
 
+  $(".login").click(function(e) {
+    e.preventDefault();
+    var $loginLink = $(this);
+
+    var promise = $.ajax({
+      url: $loginLink.attr("href")
+    })
+
+    promise.done(function(response) {
+      $("nav").append(response);
+      $loginLink.hide();
+    })
+
+  });
+
+  $("nav").on("submit", "#login-form", function(e) {
+    e.preventDefault();
+    var $form = $(this);
+
+    var promise = $.ajax ({
+      method: $form.attr("method"),
+      url:    $form.attr("action"),
+      data:   $form.serialize()
+    })
+
+    promise.done(function(response) {
+      $(".signup").remove();
+      $(".login").replaceWith(response);
+      $form.remove();
+    });
   })
 
 
 
 });
+
+
+
+
+
+
+
+
+
+
