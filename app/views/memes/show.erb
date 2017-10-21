@@ -4,8 +4,7 @@
 
 <div id="container">
 
- <center><image src="/<%= @meme.photo %>" width="500" height="500" >
-
+ <center><image src="/<%= @meme.photo %>" width="50%" >
 
 
        <form method="post" action='/memes/<%= @meme.id %>/upvote'  >
@@ -19,7 +18,7 @@
         </form>
 
 
-  <ul>
+  <ul class="comment-ul-list">
     <% @meme.comments.each do |comment| %>
       <li><%= comment.comment_content %></li>
     <% end %>
@@ -29,12 +28,11 @@
       </form>
   </ul>
 
+
  <div class="captions-display">
-  <ul>
+  <ul class="caption-ul-list">
     <% @meme.captions.each do |caption| %>
-      <h2><li><%= caption.caption_content %></li></h2>
-
-
+      <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2>
 
         <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote'>
           <button type="submit" name="submit_param" value="submit_value" ></button>
@@ -46,10 +44,7 @@
           <button type="submit" name="submit_param" value="submit_value" ></button>
         </form>
 
-
-
-
-        <ul>
+        <ul class="comment-ul-list">
           <% caption.comments.each do |comment| %>
             <li><%= comment.comment_content %></li>
           <% end %>
@@ -61,13 +56,18 @@
       <% end %>
   </ul>
 
+  </div>
+
+
+
+<% if logged_in? %>
   <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/captions">
     <input id="caption_text" type="text" name="caption_content" placeholder="add meme caption">
     <input type="submit" value="submit">
   </form>
+<% end %>
 
-    </center>
- </div>
+ </center>
 
 
 </div>
