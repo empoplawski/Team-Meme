@@ -1,5 +1,7 @@
 Team Meme
 
+![Alt text](./public/images/bundlin.png?raw=true "Team Meme")
+
 Kristin MacDonough
 Patrick Rodgiguez
 Toby Ladislas
@@ -18,7 +20,3 @@ USER STORIES:
   -Can cast one vote on each meme and caption
 
 -Users who posted a meme can favorite a caption.
-
-
-
-
