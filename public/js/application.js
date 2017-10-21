@@ -67,6 +67,5 @@ $(document).ready(function() {
   })
 
 
->>>>>>> master
 
 });
