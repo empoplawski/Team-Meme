@@ -2,15 +2,19 @@
     <% @meme.captions.each do |caption| %>
       <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2>
 
-        <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote'>
+      <% if logged_in? %>
+        <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote' class="vote-form-upvote-caption">
           <button type="submit" name="submit_param" value="submit_value" ></button>
         </form>
+      <% end %>
 
   <div class="vote_count"><%= caption.total_votes %> </div>
 
-        <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/downvote'>
+      <% if logged_in? %>
+        <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/downvote' class="vote-form-downvote-caption">
           <button type="submit" name="submit_param" value="submit_value" ></button>
         </form>
+      <% end %>
 
         <ul class="comment-ul-list">
           <% caption.comments.each do |comment| %>

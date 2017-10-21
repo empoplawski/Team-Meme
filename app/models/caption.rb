@@ -11,7 +11,7 @@ class Caption < ApplicationRecord
     self.votes.each do |vote|
       vote_total += vote.value
     end
-  vote_total
+  p vote_total
   end
 
 end
