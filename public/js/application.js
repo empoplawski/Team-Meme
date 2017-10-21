@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   })
 
-  $(".login").click(function(e) {
+  $("nav").on("click", ".login", function(e) {
     e.preventDefault();
     var $loginLink = $(this);
 
