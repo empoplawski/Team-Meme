@@ -23,5 +23,9 @@ end
 
 delete '/sessions' do
   session.delete(:user_id)
-  redirect '/'
+  if request.xhr?
+    erb :'sessions/_logged_out_links', layout: false
+  else
+    redirect '/'
+  end
 end

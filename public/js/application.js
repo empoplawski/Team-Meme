@@ -77,7 +77,21 @@ $(document).ready(function() {
     });
   })
 
+  $("nav").on("submit", ".logout-form", function(e) {
+    e.preventDefault();
+    var $form = $(this);
 
+    var promise = $.ajax ({
+      method: $(".logout-form input:first-child").attr("value"),
+      url: $form.attr("action")
+    })
+
+    promise.done(function(response) {
+      $form.replaceWith(response);
+      $(".current_user").remove();
+    })
+
+  });
 
 });
 
