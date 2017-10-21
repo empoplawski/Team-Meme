@@ -33,6 +33,7 @@ post '/memes/:id/downvote' do
 end
 
 post '/memes' do
+  authenticate!
   @meme = Meme.create(photo: "images/" + params[:photo][:filename], memer_id: current_user.id)
   @filename = params[:photo][:filename]
   file = params[:photo][:tempfile]

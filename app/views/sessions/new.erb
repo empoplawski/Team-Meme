@@ -1,7 +1,7 @@
 <h2>Login</h2>
 
 <% if @errors  %>
-  <%= erb :'/errors' locals: {errors: @errors}  %>
+  <%= erb :'_errors', locals: {errors: @errors}  %>
 <% end %>
 
-<%= erb :'/sessions/new' %>
+<%= erb :'/sessions/_login_form' %>
