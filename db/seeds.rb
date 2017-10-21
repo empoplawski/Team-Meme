@@ -15,10 +15,10 @@ end
 end
 
 
-10.times do
-  Vote.create(value: 1, voter_id: rand(1..5), voteable: Caption.find(rand(1..10)))
+# 10.times do
+#   Vote.create(value: 1, voter_id: rand(1..5), voteable: Caption.find(rand(1..10)))
 
-end
+# end
 
 Meme.create(photo: "images/99bugs.jpg", memer_id: rand(1..5))
 Meme.create(photo: "images/callbacks.jpg", memer_id: rand(1..5))

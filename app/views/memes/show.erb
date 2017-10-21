@@ -6,11 +6,11 @@
 
  <center><image src="/<%= @meme.photo %>" width="50%" >
 
-
+    <% if logged_in? %>
        <form method="post" action='/memes/<%= @meme.id %>/upvote'  >
           <button type="submit" name="submit_param" value="submit_value" ></button>
         </form>
-
+    <% end %>
   <div class="vote_count"><%= @meme.total_votes %> </div>
 
         <form method="post" action='/memes/<%= @meme.id %>/downvote'  >
