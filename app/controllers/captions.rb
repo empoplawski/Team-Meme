@@ -53,11 +53,15 @@ post '/memes/:meme_id/captions/:id/favorite' do
   authenticate!
   caption = Caption.find(params[:id])
   meme = caption.meme
-  caption.favorite = true
-  caption.save
+  if caption.favorite == false
+    if meme.more_than_one_favorite?
+      meme.unfavorite_all_captions
+    end
+    caption.favorite = true
+    caption.save
+  else
+    caption.favorite = false
+    caption.save
+  end
   redirect "/memes/#{meme.id}"
 end
-
-# when the original poster favorites a caption, that caption moves to the top of the list
-# if the original poster clicks the form again, the caption once again becomes unfavorited
-# if the original poster clicks on another post to favorite it when there is already a post that is favorited, then the post that was most recently decided to be favorited will be favorited and the other post will be unfavorited

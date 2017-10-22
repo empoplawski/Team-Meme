@@ -16,7 +16,18 @@ class Meme < ApplicationRecord
   end
 
   def order_captions
-    self.captions.order(favorite: :desc)
+    self.captions.order('favorite DESC, created_at')
+  end
+
+  def more_than_one_favorite?
+    self.captions.select { |caption| caption.favorite == true }.length == 1
+  end
+
+  def unfavorite_all_captions
+    self.captions.each do |caption|
+      caption.favorite = false
+      caption.save
+    end
   end
 
 end
