@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $(".signup").click(function(e) {
+  $("nav").on("click", ".signup", function(e) {
     e.preventDefault();
     var $link = $(this);
 
@@ -154,7 +154,7 @@ $(document).ready(function() {
     promise.done(function(response) {
       $form.replaceWith(response);
       $(".current_user").remove();
-    })
+    });
 
   });
 
