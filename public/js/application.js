@@ -204,6 +204,7 @@ $(document).ready(function() {
       request.done(function(response){
         console.log(response)
         $(".caption-comment-ul-list").append(response)
+        $("#caption-comment-text").val("");
       });
   });
 
@@ -229,6 +230,7 @@ $(document).ready(function() {
       request.done(function(response){
         console.log(response)
         $(".comment-ul-list").append(response)
+        $("#comment_text").val("");
       });
   });
 
