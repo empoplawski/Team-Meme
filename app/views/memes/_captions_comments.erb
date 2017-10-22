@@ -17,16 +17,17 @@
         </form>
       <% end %>
 
-        <ul class="comment-ul-list">
+        <ul class="caption-comment-ul-list">
           <% caption.comments.each do |comment| %>
-            <li><%= comment.comment_content %></li>
+            <!-- <li><%= comment.comment_content %></li> -->
+            <%= erb :'memes/_caption_comment_line', locals: { comment: comment} %>
           <% end %>
+        </ul>
           <% if logged_in? %>
             <form id="create_caption_comment" method="post" action="/memes/<%= @meme.id %>/caption/<%= caption.id %>">
               <input id="comment_text" type="text" name="comment_content" placeholder="add caption comment">
             <input type="submit" value="submit">
           </form>
           <% end %>
-        </ul>
       <% end %>
   </ul>
