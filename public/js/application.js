@@ -173,6 +173,18 @@ $(document).ready(function() {
 
   });
 
+  $("#to-new-meme-form").click(function(e) {
+    e.preventDefault();
+    var $link = $(this);
+    var url = $link.attr("href");
+
+    $.ajax({
+      url: url
+    }).done(function(response) {
+      $link.replaceWith(response);
+    })
+  })
+
 });
 
 
