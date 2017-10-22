@@ -52,10 +52,11 @@ end
 post '/memes/:meme_id/captions/:id/favorite' do
   authenticate!
   @caption = Caption.find(params[:id])
-  meme = @caption.meme
+  @meme = @caption.meme
+  @captions = @meme.order_captions
   if @caption.favorite == false
-    if meme.more_than_one_favorite?
-      meme.unfavorite_all_@captions
+    if @meme.more_than_one_favorite?
+      @meme.unfavorite_all_captions
     end
     @caption.favorite = true
     @caption.save
@@ -65,9 +66,9 @@ post '/memes/:meme_id/captions/:id/favorite' do
   end
 
   if request.xhr?
-    erb :'memes/_favoriting_buttons', locals: {caption: @caption }, layout: false
+    erb :'memes/_captions_comments', locals: {meme: @meme, captions: @captions }, layout: false
   else
-    redirect "/memes/#{meme.id}"
+    redirect "/memes/#{@meme.id}"
   end
 end
 

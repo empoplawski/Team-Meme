@@ -121,7 +121,7 @@ $(document).ready(function() {
     promise.done(function(response) {
       $("nav").append(response);
       $loginLink.hide();
-    })
+    });
 
   });
 
@@ -133,14 +133,14 @@ $(document).ready(function() {
       method: $form.attr("method"),
       url:    $form.attr("action"),
       data:   $form.serialize()
-    })
+    });
 
     promise.done(function(response) {
       $(".signup").remove();
       $(".login").replaceWith(response);
       $form.remove();
     });
-  })
+  });
 
   $("nav").on("submit", ".logout-form", function(e) {
     e.preventDefault();
@@ -149,7 +149,7 @@ $(document).ready(function() {
     var promise = $.ajax ({
       method: $(".logout-form input:first-child").attr("value"),
       url: $form.attr("action")
-    })
+    });
 
     promise.done(function(response) {
       $form.replaceWith(response);
@@ -158,18 +158,18 @@ $(document).ready(function() {
 
   });
 
-  $(".favorites").on("submit", function(e) {
+  $(".captions-display").on("submit", ".favorites", function(e) {
     e.preventDefault();
     var $form = $(this);
 
     var promise = $.ajax ({
       method: $form.attr("method"),
       url: $form.attr("action")
-    })
+    });
 
     promise.done(function(response) {
-      $form.children().first().replaceWith(response);
-    })
+      $(".caption-ul-list").replaceWith(response);
+    });
 
   });
 
