@@ -15,4 +15,8 @@ class Meme < ApplicationRecord
   vote_total
   end
 
+  def order_captions
+    self.captions.order(favorite: :desc)
+  end
+
 end

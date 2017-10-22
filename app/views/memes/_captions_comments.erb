@@ -1,5 +1,5 @@
 <ul class="caption-ul-list">
-    <% @meme.captions.each do |caption| %>
+    <% @captions.each do |caption| %>
       <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2>
 
       <% if logged_in? && current_user.id == @meme.memer_id %>

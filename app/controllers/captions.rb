@@ -57,3 +57,7 @@ post '/memes/:meme_id/captions/:id/favorite' do
   caption.save
   redirect "/memes/#{meme.id}"
 end
+
+# when the original poster favorites a caption, that caption moves to the top of the list
+# if the original poster clicks the form again, the caption once again becomes unfavorited
+# if the original poster clicks on another post to favorite it when there is already a post that is favorited, then the post that was most recently decided to be favorited will be favorited and the other post will be unfavorited

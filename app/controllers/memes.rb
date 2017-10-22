@@ -5,6 +5,7 @@ end
 
 get '/memes/:id' do
   @meme = Meme.find(params[:id])
+  @captions = @meme.order_captions
   erb :"memes/show"
 end
 
