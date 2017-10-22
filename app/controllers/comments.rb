@@ -4,8 +4,7 @@ post '/memes/:id/comment' do
   comment = Comment.new(comment_content: params[:comment_content], commenter_id: current_user.id, commentable: @meme)
   if comment.save
     if request.xhr?
-      p "the if"
-      content_type :json
+      erb :"memes/_meme_comment_line", locals: { comment: comment, meme: @meme }, layout: false
     else
       p "the else"
       @meme.reload
@@ -25,8 +24,7 @@ post '/memes/:id/caption/:id' do
   comment = Comment.new(comment_content: params[:comment_content], commenter_id: current_user.id, commentable: @caption)
   if comment.save
     if request.xhr?
-      p "the if"
-      content_type :json
+      erb :"memes/_caption_comment_line", locals: { comment: comment, meme: @meme, caption: @caption }, layout: false
     else
       p "the else"
       redirect "/memes/#{@meme.id}"

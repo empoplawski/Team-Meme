@@ -158,6 +158,82 @@ $(document).ready(function() {
 
   });
 
+  $("#create_caption").on("submit", function(event){
+    event.preventDefault();
+
+    var $form = $(this);
+    var url = $form.attr("action");
+    var method = $form.attr("method");
+    var data = $form.serialize();
+
+    console.log($form)
+    console.log(url)
+    console.log(method)
+    console.log(data)
+
+    var request = $.ajax({
+      method: method,
+      url: url,
+      data: data
+    });
+
+      request.done(function(response){
+        $(".caption-ul-list").append(response)
+      });
+  });
+
+  $("#create_caption_comment").on("submit", function(event){
+    event.preventDefault();
+
+    var $form = $(this);
+    var url = $form.attr("action");
+    var method = $form.attr("method");
+    var data = $form.serialize();
+
+    console.log($form)
+    console.log(url)
+    console.log(method)
+    console.log(data)
+
+    var request = $.ajax({
+      method: method,
+      url: url,
+      data: data
+    });
+
+      request.done(function(response){
+        console.log(response)
+        $(".caption-comment-ul-list").append(response)
+        $("#caption-comment-text").val("");
+      });
+  });
+
+    $("#create_meme_comment").on("submit", function(event){
+    event.preventDefault();
+
+    var $form = $(this);
+    var url = $form.attr("action");
+    var method = $form.attr("method");
+    var data = $form.serialize();
+
+    console.log($form)
+    console.log(url)
+    console.log(method)
+    console.log(data)
+
+    var request = $.ajax({
+      method: method,
+      url: url,
+      data: data
+    });
+
+      request.done(function(response){
+        console.log(response)
+        $(".comment-ul-list").append(response)
+        $("#comment_text").val("");
+      });
+  });
+
 });
 
 

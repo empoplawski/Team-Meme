@@ -1,6 +1,7 @@
 <ul class="caption-ul-list">
     <% @meme.captions.each do |caption| %>
-      <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2>
+      <!-- <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2> -->
+      <%= erb :'memes/_caption_line', locals: { caption: caption} %>
 
       <% if logged_in? %>
         <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote' class="vote-form-upvote-caption">
@@ -16,16 +17,17 @@
         </form>
       <% end %>
 
-        <ul class="comment-ul-list">
+        <ul class="caption-comment-ul-list">
           <% caption.comments.each do |comment| %>
-            <li><%= comment.comment_content %></li>
+            <!-- <li><%= comment.comment_content %></li> -->
+            <%= erb :'memes/_caption_comment_line', locals: { comment: comment} %>
           <% end %>
+        </ul>
           <% if logged_in? %>
             <form id="create_caption_comment" method="post" action="/memes/<%= @meme.id %>/caption/<%= caption.id %>">
-              <input id="comment_text" type="text" name="comment_content" placeholder="add caption comment">
+              <input id="caption-comment-text" type="text" name="comment_content" placeholder="add caption comment">
             <input type="submit" value="submit">
           </form>
           <% end %>
-        </ul>
       <% end %>
   </ul>
