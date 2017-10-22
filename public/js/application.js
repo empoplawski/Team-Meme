@@ -158,6 +158,21 @@ $(document).ready(function() {
 
   });
 
+  $(".favorites").on("submit", function(e) {
+    e.preventDefault();
+    var $form = $(this);
+
+    var promise = $.ajax ({
+      method: $form.attr("method"),
+      url: $form.attr("action")
+    })
+
+    promise.done(function(response) {
+      $form.children().first().replaceWith(response);
+    })
+
+  });
+
 });
 
 

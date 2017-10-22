@@ -3,12 +3,8 @@
       <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2>
 
       <% if logged_in? && current_user.id == @meme.memer_id %>
-        <form method="post" action="/memes/<%= @meme.id %>/captions/<%= caption.id %>/favorite">
-          <% if caption.favorite == false %>
-            <input type="submit" value="favorite">
-          <% else %>
-            <input type="submit" value="unfavorite">
-          <% end %>
+        <form class="favorites" method="post" action="/memes/<%= @meme.id %>/captions/<%= caption.id %>/favorite">
+          <%= erb :'memes/_favoriting_buttons', locals: { caption: caption }   %>
         </form>
       <% end %>
 
