@@ -2,6 +2,16 @@
     <% @meme.captions.each do |caption| %>
       <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2>
 
+      <% if logged_in? && current_user.id == @meme.memer_id %>
+        <form method="post" action="/memes/<%= @meme.id %>/captions/<%= caption.id %>/favorite">
+          <% if caption.favorite == false %>
+            <input type="submit" value="favorite">
+          <% else %>
+            Favorited
+          <% end %>
+        </form>
+      <% end %>
+
       <% if logged_in? %>
         <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote' class="vote-form-upvote-caption">
           <button type="submit" name="submit_param" value="submit_value" ></button>

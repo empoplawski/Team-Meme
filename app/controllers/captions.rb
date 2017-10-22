@@ -1,11 +1,11 @@
 post '/memes/:id/captions' do
   @meme = Meme.find(params[:id])
-  caption = Caption.new(caption_content: params[:caption_content])
+  p caption = Caption.new(caption_content: params[:caption_content], user_id: current_user.id, meme_id: @meme.id)
   if caption.save
     if request.xhr?
       content_type :json
     else
-      redirect '/memes/#{@meme.id}'
+      redirect "/memes/#{@meme.id}"
     end
   else
     status 422
@@ -49,3 +49,11 @@ post '/memes/:id/captions/:id/downvote' do
   end
 end
 
+post '/memes/:meme_id/captions/:id/favorite' do
+  authenticate!
+  caption = Caption.find(params[:id])
+  meme = caption.meme
+  caption.favorite = true
+  caption.save
+  redirect "/memes/#{meme.id}"
+end
