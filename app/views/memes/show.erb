@@ -30,6 +30,7 @@
 
 
   <% if logged_in? %>
+   <p class="add-caption-line"><em>Add a new meme caption below!</em></p>
    <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/captions" class="meme-caption-form">
       <input id="caption_text" type="text" name="caption_content" placeholder="add new meme caption">
       <input type="submit" value="submit" class="submit-button">

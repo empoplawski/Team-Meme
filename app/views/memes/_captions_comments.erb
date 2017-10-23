@@ -5,7 +5,7 @@
 
       <% if logged_in? %>
         <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote' class="vote-form-upvote-caption">
-          <button type="submit" name="submit_param" value="submit_value" ></button>
+          <button type="submit" name="submit_param" value="submit_value" class="upvote-button" ></button>
         </form>
       <% end %>
 
@@ -13,7 +13,7 @@
 
       <% if logged_in? %>
         <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/downvote' class="vote-form-downvote-caption">
-          <button type="submit" name="submit_param" value="submit_value" ></button>
+          <button type="submit" name="submit_param" value="submit_value" class="downvote-button" ></button>
         </form>
       <% end %>
 
