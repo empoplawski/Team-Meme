@@ -1,8 +1,6 @@
 post '/memes/:id/captions' do
   @meme = Meme.find(params[:id])
-
   caption = Caption.new(caption_content: params[:caption_content], meme_id: @meme.id, user_id: current_user.id)
-
   if caption.save
     if request.xhr?
       erb :"memes/_caption_line", locals: { caption: caption, meme: @meme}, layout: false
@@ -50,4 +48,34 @@ post '/memes/:id/captions/:id/downvote' do
     redirect "/memes/#{@meme.id}"
   end
 end
+
+post '/memes/:meme_id/captions/:id/favorite' do
+  authenticate!
+  @caption = Caption.find(params[:id])
+  @meme = @caption.meme
+  @captions = @meme.order_captions
+  if @caption.favorite == false
+    if @meme.more_than_one_favorite?
+      @meme.unfavorite_all_captions
+    end
+    @caption.favorite = true
+    @caption.save
+  else
+    @caption.favorite = false
+    @caption.save
+  end
+
+  if request.xhr?
+    erb :'memes/_captions_comments', locals: {meme: @meme, captions: @captions }, layout: false
+  else
+    redirect "/memes/#{@meme.id}"
+  end
+end
+
+
+
+
+
+
+
 
