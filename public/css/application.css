@@ -1,6 +1,15 @@
+/*Things to style, in order of importance:*/
+/*Adjust picture sizes on front page*/
+/*Pretty up the register/login links*/
+/*AHH MEME OVERFLOW MAKE IT BLACK NOT BLUE!!*/
+/*Color scheme?*/
+/*Divs on show page? for clarity?*/
+
+
+
 body {
-  margin-left: 1cm;
-  margin-top: 1cm;
+  margin: 1cm;
+  background: linear-gradient(#F0FFFF, #9370DB, #F0FFFF);
 }
 
 .container {
@@ -39,13 +48,14 @@ body {
 
 .logout-form {
   display: inline;
+  padding-right: 20px;
 }
 
 .session_display {
   display: inline;
   color: inherit;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 0px;
+  padding-right: 20px;
 }
 
 a:link {
@@ -57,7 +67,7 @@ nav {
   width: 100%;
   text-align: right;
   position: fixed;
-  right: 30px;
+  right: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
   top: 0;
@@ -84,3 +94,54 @@ nav {
 .captions-display {
   width: 70%;
 }
+
+.frontpage-meme {
+  width: 70%;
+  border: 10px double black;
+}
+
+.show-meme {
+  border: 5px double black;
+}
+
+.upvote-button {
+  display: block;
+  width: 0; 
+  height: 0; 
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 5px solid black;
+  border-top: none;
+  background-color: inherit;
+  margin-bottom: 5px;
+}
+
+.downvote-button {
+  display: inline-block;
+  width: 0; 
+  height: 0; 
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 5px solid black;
+  border-bottom: none;
+  background-color: inherit;
+  margin-bottom: 5px;
+}
+
+.meme-caption-form {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 2px dotted black;
+  width: 70%;
+}
+
+.add-caption-line {
+  border-top: 2px dotted black;
+  padding-top: 15px;
+  width: 70%;
+  margin-top: 2cm;
+}
+
+
+
+

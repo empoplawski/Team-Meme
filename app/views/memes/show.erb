@@ -4,11 +4,11 @@
 
 <div id="container">
 
- <center><image src="/<%= @meme.photo %>" width="50%" >
+ <center><image class="show-meme" src="/<%= @meme.photo %>" width="50%" >
 
     <% if logged_in? %>
        <form method="post" action='/memes/<%= @meme.id %>/upvote'  class="vote-form-upvote-meme">
-          <button type="submit" name="submit_param" value="submit_value" ></button>
+          <button type="submit" name="submit_param" value="submit_value" class="upvote-button"></button>
         </form>
     <% end %>
 
@@ -16,7 +16,7 @@
 
     <% if logged_in? %>
       <form method="post" action='/memes/<%= @meme.id %>/downvote' class="vote-form-downvote-meme" >
-        <button type="submit" name="submit_param" value="submit_value" ></button>
+        <button type="submit" name="submit_param" value="submit_value" class="downvote-button" ></button>
       </form>
     <% end %>
 
@@ -30,9 +30,9 @@
 
 
   <% if logged_in? %>
-   <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/captions">
-      <input id="caption_text" type="text" name="caption_content" placeholder="add meme caption">
-      <input type="submit" value="submit">
+   <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/captions" class="meme-caption-form">
+      <input id="caption_text" type="text" name="caption_content" placeholder="add new meme caption">
+      <input type="submit" value="submit" class="submit-button">
     </form>
     <%# erb :'memes/_add_caption', locals: { meme: @meme } %>
   <% end %>
