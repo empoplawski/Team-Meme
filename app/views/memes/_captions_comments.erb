@@ -1,6 +1,7 @@
 <ul class="caption-ul-list">
 
     <% @meme.captions.each do |caption| %>
+
       <%= erb :'memes/_caption_line', locals: { caption: caption} %>
 
 
@@ -9,6 +10,7 @@
           <%= erb :'memes/_favoriting_buttons', locals: { caption: caption }   %>
         </form>
       <% end %>
+
 
       <% if logged_in? %>
         <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote' class="vote-form-upvote-caption">

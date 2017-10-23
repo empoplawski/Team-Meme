@@ -211,6 +211,7 @@ $(document).ready(function() {
       });
   });
 
+
   $("#create_caption_comment").on("submit", function(event){
     event.preventDefault();
 
