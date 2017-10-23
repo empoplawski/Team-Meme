@@ -7,6 +7,6 @@
     <% if logged_in? %>
       <form id="create_meme_comment" method="post" action="/memes/<%= @meme.id %>/comment">
         <input id="comment_text" type="text" name="comment_content" placeholder="add meme comment">
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" class="submit-button">
       </form>
     <% end %>

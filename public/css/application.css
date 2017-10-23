@@ -9,7 +9,7 @@
 
 body {
   margin: 1cm;
-  background: linear-gradient(#F0FFFF, #9370DB, #F0FFFF);
+  background: linear-gradient(#F0FFFF, #FFFAFA, #F0FFFF, #FFFAFA);
 }
 
 .container {
@@ -22,6 +22,10 @@ body {
   padding-right: 20px;
   font-family: 'Dekko';
   font-weight: normal;
+}
+
+.site-title a:visited {
+  color: black;
 }
 
 .header2 {
@@ -80,7 +84,6 @@ nav {
 
 .caption-li-layout {
   padding: 10px;
-  border-top: 1px solid gray;
 }
 
 .comment-ul-list {
@@ -92,7 +95,9 @@ nav {
 }
 
 .captions-display {
+  margin-top: 2cm;
   width: 70%;
+  border: 2px solid navy;
 }
 
 .frontpage-meme {
@@ -142,6 +147,64 @@ nav {
   margin-top: 2cm;
 }
 
+.logging-in-form {
+  background-color: inherit;
+  padding-right: 10px;
+}
+
+.register {
+  background-color: inherit;
+  padding-right: 10px;
+}
+
+
+.login-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 25px;
+  width: 60px;
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
+}
+
+.registration-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 25px;
+  width: 85px;
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
+}
+
+.submit-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 25px;
+  width: 80px;
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
+}
+
+.any-comment {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: navy;
+  border: 1px ridge gray;
+  width: 70%;
+}
+
+.submit-meme-form {
+  width: 50%;
+  margin: auto;
+}
 
 
 
