@@ -3,6 +3,10 @@ get '/memes' do
   erb :'memes/index'
 end
 
+get '/memes/new' do
+  erb :'memes/_new_meme_form', layout: false
+end
+
 get '/memes/:id' do
   @meme = Meme.find(params[:id])
   @captions = @meme.order_captions
@@ -51,13 +55,3 @@ post '/memes' do
   end
   redirect '/'
 end
-
-get '/memes/new' do
-  erb :'memes/_new_meme_form', layout: false
-end
-
-# We will need to move this block above the get request for
-# the meme show page because if we don't then any time a
-# user clicks on a link to submit a new meme then the
-# sever will error out because the server will read the
-# route "memes/:id" before reading "/memes/new"

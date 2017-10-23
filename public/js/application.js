@@ -168,6 +168,7 @@ $(document).ready(function() {
     });
 
     promise.done(function(response) {
+      console.log(response);
       $(".caption-ul-list").replaceWith(response);
     });
 
@@ -212,7 +213,7 @@ $(document).ready(function() {
   });
 
 
-  $("#create_caption_comment").on("submit", function(event){
+  $(".captions-display").on("submit", "#create_caption_comment", function(event){
     event.preventDefault();
 
     var $form = $(this);
