@@ -1,9 +1,14 @@
 <% @memes.each do |meme| %>
   <ul class="meme-list">
-    <center><li><a href="/memes/<%= meme.id %>"><img src="/<%= meme.photo %>"></a></li></center>
+    <center><li><a href="/memes/<%= meme.id %>"><img class="frontpage-meme" src="/<%= meme.photo %>"></a></li></center>
   </ul>
 <% end %>
 
+
+<form method="post" action="/memes" enctype="multipart/form-data" class="submit-meme-form">
+  <input type="file" name="photo">
+  <input type="submit" class="submit-button">
+</form>
 
 <a id="to-new-meme-form" href="/memes/new"><h2>Submit a meme here!</h2></a>
 

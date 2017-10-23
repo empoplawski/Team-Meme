@@ -1,4 +1,15 @@
+/*Things to style, in order of importance:*/
+/*Adjust picture sizes on front page*/
+/*Pretty up the register/login links*/
+/*AHH MEME OVERFLOW MAKE IT BLACK NOT BLUE!!*/
+/*Color scheme?*/
+/*Divs on show page? for clarity?*/
+
+
+
 body {
+  margin: 1cm;
+  background: linear-gradient(#F0FFFF, #FFFAFA, #F0FFFF, #FFFAFA);
   margin-left: 1cm;
   margin-top: 1cm;
   margin-bottom: 3cm;
@@ -14,6 +25,10 @@ body {
   padding-right: 20px;
   font-family: 'Dekko';
   font-weight: normal;
+}
+
+.site-title a:visited {
+  color: black;
 }
 
 .header2 {
@@ -40,13 +55,14 @@ body {
 
 .logout-form {
   display: inline;
+  padding-right: 20px;
 }
 
 .session_display {
   display: inline;
   color: inherit;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 0px;
+  padding-right: 20px;
 }
 
 a:link {
@@ -58,7 +74,7 @@ nav {
   width: 100%;
   text-align: right;
   position: fixed;
-  right: 30px;
+  right: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
   top: 0;
@@ -71,7 +87,6 @@ nav {
 
 .caption-li-layout {
   padding: 10px;
-  border-top: 1px solid gray;
 }
 
 .comment-ul-list {
@@ -83,5 +98,116 @@ nav {
 }
 
 .captions-display {
+  margin-top: 2cm;
+  width: 70%;
+  border: 2px solid navy;
+}
+
+.frontpage-meme {
+  width: 70%;
+  border: 10px double black;
+}
+
+.show-meme {
+  border: 5px double black;
+}
+
+.upvote-button {
+  display: block;
+  width: 0; 
+  height: 0; 
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 5px solid black;
+  border-top: none;
+  background-color: inherit;
+  margin-bottom: 5px;
+}
+
+.downvote-button {
+  display: inline-block;
+  width: 0; 
+  height: 0; 
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 5px solid black;
+  border-bottom: none;
+  background-color: inherit;
+  margin-bottom: 5px;
+}
+
+.meme-caption-form {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 2px dotted black;
   width: 70%;
 }
+
+.add-caption-line {
+  border-top: 2px dotted black;
+  padding-top: 15px;
+  width: 70%;
+  margin-top: 2cm;
+}
+
+.logging-in-form {
+  background-color: inherit;
+  padding-right: 10px;
+}
+
+.register {
+  background-color: inherit;
+  padding-right: 10px;
+}
+
+
+.login-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 25px;
+  width: 60px;
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
+}
+
+.registration-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 25px;
+  width: 85px;
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
+}
+
+.submit-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 25px;
+  width: 80px;
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
+}
+
+.any-comment {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: navy;
+  border: 1px ridge gray;
+  width: 70%;
+}
+
+.submit-meme-form {
+  width: 50%;
+  margin: auto;
+}
+
+
+
