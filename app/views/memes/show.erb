@@ -30,7 +30,11 @@
 
 
   <% if logged_in? %>
-    <%= erb :'memes/_add_caption'%>
+   <form id="create_caption" method="post" action="/memes/<%= @meme.id %>/captions">
+      <input id="caption_text" type="text" name="caption_content" placeholder="add meme caption">
+      <input type="submit" value="submit">
+    </form>
+    <%# erb :'memes/_add_caption', locals: { meme: @meme } %>
   <% end %>
 </center>
 

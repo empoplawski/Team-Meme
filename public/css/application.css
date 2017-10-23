@@ -78,6 +78,10 @@ nav {
   list-style-type: none;
 }
 
+.caption-comment-ul-list {
+  list-style-type: none;
+}
+
 .captions-display {
   width: 70%;
 }

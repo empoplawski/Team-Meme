@@ -1,9 +1,9 @@
 post '/memes/:id/captions' do
   @meme = Meme.find(params[:id])
-  p caption = Caption.new(caption_content: params[:caption_content], user_id: current_user.id, meme_id: @meme.id)
+  caption = Caption.new(caption_content: params[:caption_content], meme_id: @meme.id, user_id: current_user.id)
   if caption.save
     if request.xhr?
-      content_type :json
+      erb :"memes/_caption_line", locals: { caption: caption, meme: @meme}, layout: false
     else
       redirect "/memes/#{@meme.id}"
     end
