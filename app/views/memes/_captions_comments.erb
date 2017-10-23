@@ -1,7 +1,16 @@
 <ul class="caption-ul-list">
+
     <% @meme.captions.each do |caption| %>
-      <!-- <h2><li class="caption-li-layout"><%= caption.caption_content %></li></h2> -->
+
       <%= erb :'memes/_caption_line', locals: { caption: caption} %>
+
+
+      <% if logged_in? && current_user.id == @meme.memer_id %>
+        <form class="favorites" method="post" action="/memes/<%= @meme.id %>/captions/<%= caption.id %>/favorite">
+          <%= erb :'memes/_favoriting_buttons', locals: { caption: caption }   %>
+        </form>
+      <% end %>
+
 
       <% if logged_in? %>
         <form method="post" action='/memes/<%= @meme.id %>/captions/<%= caption.id %>/upvote' class="vote-form-upvote-caption">

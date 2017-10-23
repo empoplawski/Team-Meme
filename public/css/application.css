@@ -10,6 +10,9 @@
 body {
   margin: 1cm;
   background: linear-gradient(#F0FFFF, #FFFAFA, #F0FFFF, #FFFAFA);
+  margin-left: 1cm;
+  margin-top: 1cm;
+  margin-bottom: 3cm;
 }
 
 .container {
